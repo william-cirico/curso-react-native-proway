@@ -1,13 +1,24 @@
+import { useState } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { TimerProvider } from './contexts/TimerContext';
 import { TimerDialogScreen } from './screens/TimerDialogScreen';
+import { TimerScreen } from './screens/TimerScreen';
 import { colors } from './styles/colors';
 
 export default function App() {
+  const [timerStarted, setTimerStarted] = useState(false);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar />
-      <TimerDialogScreen />
-    </SafeAreaView>
+    <TimerProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar />
+        {
+          timerStarted
+            ? <TimerScreen toggleScreen={() => setTimerStarted(prev => !prev)} />
+            : <TimerDialogScreen toggleScreen={() => setTimerStarted(prev => !prev)} />
+        }
+      </SafeAreaView>
+    </TimerProvider>
   );
 }
 
