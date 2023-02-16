@@ -5,12 +5,12 @@ Criar o APP calculadora como mostrado acima:
 
 Os componentes que compoem a calculadora são:
 
-*<Button />* -> Um botão customizável
+"<Button />" -> Um botão customizável
 Propriedades:
 - Texto do botão
 - evento de onPress
 - Tipo do botão
 
-*<Row />* -> Um container que irá abrigar elementos lado a lado
+"<Row />" -> Um container que irá abrigar elementos lado a lado
 
-*<Display />* -> Elemento resposável por mostrar os valores digitados e os resultados das operações
+"<Display />" -> Elemento resposável por mostrar os valores digitados e os resultados das operações
